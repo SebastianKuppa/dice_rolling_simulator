@@ -32,6 +32,22 @@ ImageLabel.image = random_dice_image
 ImageLabel.pack(expand=True)
 
 
+def rolling_dice():
+    new_dice_image = ImageTk.PhotoImage(Image.open(random.choice(dice_images)))
+    # update image
+    ImageLabel.configure(image=new_dice_image)
+    # keep reference
+    ImageLabel.image = new_dice_image
+
+
+# adding a button to activate the rolling_dice() function
+button = tkinter.Button(
+    root,
+    text='Roll the Dice',
+    fg='Blue',
+    command=rolling_dice
+)
+button.pack(expand=True)
 
 
 if __name__ == '__main__':
