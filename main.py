@@ -7,7 +7,7 @@ root = tkinter.Tk()
 root.geometry('400x400')
 root.title('Roll the dice')
 
-# add a label to the frame
+# add a label to the frame in order for the HeadingLabel line to be lower
 BlankLine = tkinter.Label(root, text="")
 BlankLine.pack()
 
@@ -24,6 +24,12 @@ dice_images = ['./dice_images/die1.png', './dice_images/die2.png', './dice_image
                './dice_images/die4.png', './dice_images/die5.png', './dice_images/die6.png']
 # simulate a random dice image between 0 and 6
 random_dice_image = ImageTk.PhotoImage(Image.open(random.choice(dice_images)))
+
+# constructing an Image widget for tkinter window
+ImageLabel = tkinter.Label(root, image=random_dice_image)
+ImageLabel.image = random_dice_image
+# packing it into the window
+ImageLabel.pack(expand=True)
 
 
 
